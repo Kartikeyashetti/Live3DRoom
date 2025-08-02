@@ -1,0 +1,35 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-height base */
+html, body, #root {
+  height: 100vh;
+  overflow: hidden; /* Prevent unwanted page scroll */
+}
+
+/* App container */
+.App {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 20vw;
+  height: 100%; /* No overflow */
+  background-color: white;
+  overflow-y: auto; /* Scroll inside if content exceeds height */
+}
+
+/* Main content (e.g. canvas or viewer) */
+.main {
+  flex: 1;
+  height: 100%;
+  background-color: #eaeaea;
+  overflow: hidden;
+}
