@@ -6,7 +6,7 @@ import * as THREE from 'three';
 
 
 export default function RoomModel(props) {
-  const gltf = useGLTF('/glb/interior.glb') // path relative to public folder
+  const gltf = useGLTF('/Live3DRoom/glb/interior.glb') // path relative to public folder
 
   useEffect(() => {
     gltf.scene.traverse((child) => {
