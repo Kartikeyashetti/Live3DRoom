@@ -3,9 +3,9 @@ import { useEffect, useMemo } from 'react';
 import * as THREE from 'three';
 
 export default function Chair({ selectedChair, color }) {
-  const { scene: chair1 } = useGLTF('/Live3DRoom/glb/Chairs/smoothChair.glb');
-  const { scene: chair2 } = useGLTF('/Live3DRoom/glb/Chairs/sofa3.glb');
-  const { scene: chair3 } = useGLTF('/Live3DRoom/glb/Chairs/SofaResized.glb');
+  const { scene: chair1 } = useGLTF('/Live3DRoom/glb/Chairs/smoothChairLowpoly.gltf');
+  const { scene: chair2 } = useGLTF('/Live3DRoom/glb/Chairs/Sofaa3.gltf');
+  const { scene: chair3 } = useGLTF('/Live3DRoom/glb/Chairs/SofaResizeLowpoly.gltf');
 
   let currentChair;
   if (selectedChair === 'chair2') currentChair = chair2;

@@ -18,7 +18,7 @@ export default function App() {
     color: '#ffffff',
   });
 
-  const [color,setColor]= useState('#796e6d')
+  const [color, setColor] = useState('#796e6d')
 
   return (
     <div>
@@ -34,16 +34,17 @@ export default function App() {
           marginRight: 'auto', background: '#1e1e1e'
         }} >
           {/* <ambientLight /> */}
-          <directionalLight position={[5, 5, 5]}  intensity={2} />
+          <directionalLight position={[5, 5, 5]} intensity={1} />
           <RoomModel position={[0, 0, 0.7]} scale={1.8} />
-          <Chair selectedChair={selectedChair} color={color}/>
+          <Chair selectedChair={selectedChair} color={color} />
           <SpotLightComponent
             intensity={lightSettings.intensity}
             color={lightSettings.color}
           />
 
           <CameraControls ref={cameraControlsRef} minDistance={1.5}   // closest zoom-in distance
-            maxDistance={5} />
+            maxDistance={5} maxPolarAngle={Math.PI / 180 * 60}
+          />
 
           {/* <FocusableSphere position={[2, 0, 0]} controlsRef={cameraControlsRef} />
           <FocusableSphere position={[-2, 0, 0]} controlsRef={cameraControlsRef} /> */}
