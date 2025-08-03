@@ -1,33 +1,23 @@
 // MenuBar.jsx
-export default function MenuBar({ onChairChange ,lightSettings,setLightSettings}) {
+export default function MenuBar({ onChairChange, lightSettings, setLightSettings, onColorChange }) {
   return (
     <div style={styles.menuContainer}>
       <div style={styles.section}>
         <h3 style={styles.heading}>Change Object</h3>
-        <button style={styles.button} onClick={() => onChairChange('chair1')} >Sofa 1</button>
-        <button style={styles.button}onClick={() => onChairChange('chair2')}>Sofa 2</button>
-        <button style={styles.button}onClick={() => onChairChange('chair3')}>Sofa 3</button>
+        <button style={styles.button} onClick={() => onChairChange('chair1')} >Nordic Curve</button>
+        <button style={styles.button} onClick={() => onChairChange('chair2')}>Aria Luxe</button>
+        <button style={styles.button} onClick={() => onChairChange('chair3')}>Linea Extend</button>
       </div>
 
       <div style={styles.section}>
         <h3 style={styles.heading}>Texture Change</h3>
-        <button style={styles.button}>Red Texture</button>
-        <button style={styles.button}>Blue Texture</button>
+        <button style={styles.button} onClick={() => onColorChange('#6b2822')}>Dark Maroon</button>
+        <button style={styles.button} onClick={() => onColorChange('#796e6d')}>Vintage Mauve</button>
+        <button style={styles.button} onClick={() => onColorChange('grey')}>Urban Grey</button>
+
       </div>
 
-      {/* <div style={styles.section}>
-        <h3 style={styles.heading}>Light Control</h3>
-        <label style={styles.label}>
-          Intensity
-          <input type="range" min="0" max="2" step="0.1" style={styles.slider} />
-        </label>
-        <label style={styles.label}>
-          Color
-          <input type="color" style={styles.colorPicker} />
-        </label>
-      </div> */}
-
-       <div style={styles.section}>
+      <div style={styles.section}>
         <h3 style={styles.heading}>Light Control</h3>
 
         <label style={styles.label}>
@@ -37,7 +27,7 @@ export default function MenuBar({ onChairChange ,lightSettings,setLightSettings}
             min="0"
             max="200"
             step="0.1"
-             value={lightSettings.intensity}
+            value={lightSettings.intensity}
             onChange={(e) => setLightSettings({ ...lightSettings, intensity: parseFloat(e.target.value) })}
             style={styles.slider}
           />
@@ -67,7 +57,7 @@ const styles = {
     flexDirection: 'column',
     gap: '2rem',
     boxShadow: '2px 0 5px rgba(74, 209, 131, 0.1)',
-    overflowY: 'auto',    
+    overflowY: 'auto',
   },
   section: {
     display: 'flex',
@@ -78,14 +68,14 @@ const styles = {
     fontSize: '1.1rem',
     marginBottom: '0.5rem',
     borderBottom: '1px solid #ccc',
-    backgroundColor: '#aed20fff',
+    backgroundColor: '#c97a04ff',
 
     paddingBottom: '0.25rem',
   },
   button: {
     padding: '0.5rem',
     border: '1px solid #ccc',
-    backgroundColor: '#d20f0fff',
+    backgroundColor: '#ea900aff',
     cursor: 'pointer',
   },
   label: {

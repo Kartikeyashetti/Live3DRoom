@@ -1,8 +1,27 @@
 // RoomModel.jsx
 import { useGLTF } from '@react-three/drei'
+import { useEffect } from 'react'
+import * as THREE from 'three';
+
+
 
 export default function RoomModel(props) {
   const gltf = useGLTF('/glb/interior.glb') // path relative to public folder
 
-  return <primitive object={gltf.scene} scale={7} {...props} />
+  useEffect(() => {
+    gltf.scene.traverse((child) => {
+      if (child.isMesh) {
+        //  child.castShadow = true
+
+        child.receiveShadow = true
+         // Fix for self-shadowing artifacts
+      if (child.material) {
+        child.material.shadowSide = THREE.DoubleSide;
+      }
+
+      }
+    })
+  }, [gltf.scene])
+
+  return <primitive object={gltf.scene}  {...props} />
 }

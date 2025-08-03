@@ -11,19 +11,21 @@ import Chair from './Chair';
 import SpotLightComponent from './spotlight'
 export default function App() {
   const cameraControlsRef = useRef()
-  const [selectedChair, setSelectedChair] = useState('chair1');
+  const [selectedChair, setSelectedChair] = useState('chair2');
 
   const [lightSettings, setLightSettings] = useState({
-    intensity: 1,
+    intensity: 50,
     color: '#ffffff',
   });
+
+  const [color,setColor]= useState('#796e6d')
 
   return (
     <div>
       <Header />
       <div style={{ display: 'flex', height: '100vh' }}>
 
-        <Canvas shadows camera={{ position: [0, 2, 5], fov: 50 }} style={{
+        <Canvas shadows camera={{ position: [-4, 2, 5], fov: 50 }} style={{
           width: '80vw',
           height: '80vh',
           // marginTop: '20vh', // 20% gap at the top
@@ -32,19 +34,19 @@ export default function App() {
           marginRight: 'auto', background: '#1e1e1e'
         }} >
           {/* <ambientLight /> */}
-          {/* <directionalLight position={[5, 5, 5]} /> */}
-          <RoomModel position={[0, 0, 0]} scale={1.8} />
-          <Chair selectedChair={selectedChair} />
+          <directionalLight position={[5, 5, 5]}  intensity={2} />
+          <RoomModel position={[0, 0, 0.7]} scale={1.8} />
+          <Chair selectedChair={selectedChair} color={color}/>
           <SpotLightComponent
             intensity={lightSettings.intensity}
             color={lightSettings.color}
           />
 
-          <CameraControls ref={cameraControlsRef} minDistance={2}   // closest zoom-in distance
+          <CameraControls ref={cameraControlsRef} minDistance={1.5}   // closest zoom-in distance
             maxDistance={5} />
 
-          <FocusableSphere position={[2, 0, 0]} controlsRef={cameraControlsRef} />
-          <FocusableSphere position={[-2, 0, 0]} controlsRef={cameraControlsRef} />
+          {/* <FocusableSphere position={[2, 0, 0]} controlsRef={cameraControlsRef} />
+          <FocusableSphere position={[-2, 0, 0]} controlsRef={cameraControlsRef} /> */}
           {/* <Environment
             preset="night"
             background
@@ -60,6 +62,8 @@ export default function App() {
           onChairChange={setSelectedChair}
           lightSettings={lightSettings} // ✅ required
           setLightSettings={setLightSettings} // ✅ required
+
+          onColorChange={setColor}
         />
 
 

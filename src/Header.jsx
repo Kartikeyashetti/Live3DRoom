@@ -12,7 +12,7 @@ function Header() {
       position: 'relative'
     }}>
       {/* Left corner */}
-      <div style={{ fontSize: '0.9rem', marginTop:"8px" }}>
+      <div style={{ fontSize: '0.9rem', marginTop: "8px" }}>
         Designed & Developed by <strong>Kartikeya Shetti</strong>
       </div>
 
@@ -28,11 +28,19 @@ function Header() {
       </div>
 
       {/* Right corner */}
-      <div style={{ display: 'flex', gap: '1rem', fontSize: '0.9rem' }}>
-        <a href="mailto:kartikeyashetti@gmail.com" style={{ color: 'white', textDecoration: 'none' }}>Email</a>
-        <a href="https://linkedin.com/in/kartikeya-shetti-2b736a10b/?originalSubdomain=in" style={{ color: 'white', textDecoration: 'none' }} target="_blank">LinkedIn</a>
-        <a href="https://your-3d-portfolio.com" style={{ color: 'white', textDecoration: 'none' }} target="_blank">3D Portfolio</a>
-        <a href="https://instagram.com//kartikeyashetti/?hl=en" style={{ color: 'white', textDecoration: 'none' }} target="_blank">Instagram</a>
+      <div>
+        <div style={{ display: 'flex', gap: '1rem', fontSize: '0.9rem' }}>
+
+          <a href="mailto:kartikeyashetti@gmail.com" style={{ color: 'white', textDecoration: 'none' }}>Email</a>
+          <a href="https://linkedin.com/in/kartikeya-shetti-2b736a10b/?originalSubdomain=in" style={{ color: 'white', textDecoration: 'none' }} target="_blank">LinkedIn</a>
+          <a href="https://drive.google.com/drive/folders/1HrUyzGf1Sh3qjRYQMF-CzWVQNFTW-Oyb" style={{ color: 'white', textDecoration: 'none' }} target="_blank">3D Portfolio</a>
+          <a href="https://instagram.com//kartikeyashetti/?hl=en" style={{ color: 'white', textDecoration: 'none' }} target="_blank">Instagram</a>
+        </div>
+        <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'white' }}>
+          📞 <a href="tel:+917795587095" style={{ color: 'white', textDecoration: 'none' }}>+91 7795587095</a> |
+          📱 <a href="tel:+916360636392" style={{ color: 'white', textDecoration: 'none' }}>+91 6360636392</a>
+        </div>
+
       </div>
     </header>
   );

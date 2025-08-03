@@ -12,6 +12,8 @@ export default function SpotLightComponent({ intensity, color }) {
             castShadow
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
+              shadow-bias={-0.0005}
+
         />
     );
 }
